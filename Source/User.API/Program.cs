@@ -18,6 +18,10 @@ namespace User.API
     {
         public static void Main(string[] args)
         {
+            var logger = NLogBuilder
+                   .ConfigureNLog("nlog.config")
+                   .GetCurrentClassLogger();
+
             var host = CreateWebHostBuilder(args).Build();
 
             using (var scope = host.Services.CreateScope())
@@ -26,11 +30,12 @@ namespace User.API
                 {
                     var context = scope.ServiceProvider.GetService<UserContext>();
 
+                    context.Database.EnsureDeleted();
                     context.Database.Migrate();
                 }
                 catch (Exception ex)
                 {
-                    
+                    logger.Error(ex, "An error occurred while migrating the database.");
                 }
             }
             // run the web app

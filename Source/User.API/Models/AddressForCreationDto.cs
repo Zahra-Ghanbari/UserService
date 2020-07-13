@@ -8,9 +8,14 @@ namespace User.API.Models
 {
     public class AddressForCreationDto
     {
-        [Required(ErrorMessage = "You should provide a State value.")]
+
+        [Required()]
+        [MaxLength(100)]
+        public string Country { get; set; }
+
         [MaxLength(50)]
         public string State { get; set; }
+
         [Required(ErrorMessage = "You should provide a City value.")]
         [MaxLength(50)]
         public string City { get; set; }
