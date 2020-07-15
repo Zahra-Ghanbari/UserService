@@ -18,27 +18,52 @@ namespace TestUserApi.Repository
         public RepositoryTest()
         {
             this.userContext = Substitute.For<UserContext>(new DbContextOptions<UserContext> ());
-            this.testObject = new Repository<User>(this.userContext);
+            //this.testObject = new Repository<User>(this.userContext);
         }
 
         [Fact]
-        public void Constructor_NullAugument_ThrowException()
+        public void Constructor_NullArgument_ThrowException()
         {
             Assert.Throws<ArgumentNullException>(() => new Repository<User>(null));
         }
 
-        [Fact(Skip ="TODO")]
+        [Fact]
         public void Add_CallWithUserEntity_AddSuccessfully()
         {
-            User user = new User();
-            user.FirstName = "test";
-            var dbSetMock = Substitute.For<DbSet<User>>();
-            this.userContext.Set<User>().Returns(dbSetMock);
+            //arrange
+            var user = new User()
+            {
+                FirstName = "Zahra",
+                LastName = "GhanbariNezhad",
+                Email = "Z@gmail.com",
+                Birthdate = "18/08/1984",
+                Address = new Address() { Country = "Iran", State = "Tehran", City = "Tehran" },
+            };
+            var expectedUser = this.Seed(user);
+            var dbSetMock = Substitute.For<DbSet<User>, IQueryable<User>>();
 
+            ((IQueryable<User>)dbSetMock).Provider.Returns(expectedUser.Provider);
+            ((IQueryable<User>)dbSetMock).Expression.Returns(expectedUser.Expression);
+            ((IQueryable<User>)dbSetMock).ElementType.Returns(expectedUser.ElementType);
+            ((IQueryable<User>)dbSetMock).GetEnumerator().Returns(expectedUser.GetEnumerator());
+                    
+            this.userContext.Set<User>().Returns(dbSetMock);
+            this.testObject = new Repository<User>(this.userContext);         
+         
+             //act
             this.testObject.Add(user);
 
-
-            dbSetMock.Received(1).Add(Arg.Is<User>( user));
+            //assert
+            dbSetMock.Received(1).Add(user);            
         }
+
+        public IQueryable<User> Seed(User user)
+        {
+            List<User> userList = new List<User> {
+                user
+                };
+            return userList.AsQueryable<User>();
+        }
+
     }
 }

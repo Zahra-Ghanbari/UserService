@@ -23,7 +23,7 @@ namespace User.API.Models
 
         [Required(ErrorMessage = "You should provide a Birthdate value.")]
         [RegularExpression(@"/^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/")]
-        public DateTime Birthdate { get; set; }
+        public string Birthdate { get; set; }
 
         [Required(ErrorMessage = "You should provide a Address value.")]
         [MaxLength(100)]
