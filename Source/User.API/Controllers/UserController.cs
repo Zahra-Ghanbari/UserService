@@ -8,6 +8,7 @@ using Interfaces;
 using AutoMapper;
 using User.API.Models;
 using System.Linq.Expressions;
+using Microsoft.Extensions.Logging;
 
 namespace User.API.Controllers
 {
@@ -15,10 +16,12 @@ namespace User.API.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-       private readonly IUserService _userService;
+        private readonly ILogger<UserController> _logger;
+        private readonly IUserService _userService;
         private readonly IMapper _mapper;
-        public UserController(IUserService iUserService,IMapper mapper)
+        public UserController(IUserService iUserService, IMapper mapper, ILogger<UserController> logger)
         {
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _userService = iUserService ?? throw new ArgumentNullException(nameof(iUserService));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
@@ -26,17 +29,25 @@ namespace User.API.Controllers
         [HttpPost]
         public IActionResult CreateUser([FromBody]UserForCreationDto user)
         {
-            if(!ModelState.IsValid)
+            try
             {
-                BadRequest(ModelState);
+                if (!ModelState.IsValid)
+                {                   
+                    _logger.LogInformation
+                        ("server is unable to process the request sent by the client due to invalid request");
+                    BadRequest(ModelState);
+                }
+
+                var finalUser = _mapper.Map<Model.User>(user);
+                _userService.UserRegistration(finalUser);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Exception happens when add a user",ex);
+                return StatusCode(500,"A problem happend while received your request.");
 
             }
-
-            var finalUser = _mapper.Map<Model.User>(user);
-            _userService.UserRegistration(finalUser);
-
             return Ok();
-
         }
     }
 }

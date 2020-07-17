@@ -27,13 +27,13 @@
   <ItemGroup>
     <Folder Include="DataContext\" />
     <Folder Include="UserAPI\" />
-    <Folder Include="UnitOfWork\" />
-    <Folder Include="Service\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Source\DataContext\DataContext.csproj" />
     <ProjectReference Include="..\..\Source\Repository\Repository.csproj" />
+    <ProjectReference Include="..\..\Source\Service\Service.csproj" />
+    <ProjectReference Include="..\..\Source\UnitOfWork\UnitOfWork.csproj" />
   </ItemGroup>
 
 </Project>

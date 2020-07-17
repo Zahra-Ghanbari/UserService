@@ -3,7 +3,6 @@ using NSubstitute;
 using Repository;
 using System;
 using System.Collections.Generic;
-using System.Text;
 using Xunit;
 using Model;
 using Microsoft.EntityFrameworkCore;
@@ -17,8 +16,7 @@ namespace TestUserApi.Repository
         private Repository<Model.User> testObject;
         public RepositoryTest()
         {
-            this.userContext = Substitute.For<UserContext>(new DbContextOptions<UserContext> ());
-            //this.testObject = new Repository<User>(this.userContext);
+            this.userContext = Substitute.For<UserContext>(new DbContextOptions<UserContext>());       
         }
 
         [Fact]
@@ -47,7 +45,7 @@ namespace TestUserApi.Repository
             ((IQueryable<User>)dbSetMock).ElementType.Returns(expectedUser.ElementType);
             ((IQueryable<User>)dbSetMock).GetEnumerator().Returns(expectedUser.GetEnumerator());
                     
-            this.userContext.Set<User>().Returns(dbSetMock);
+             this.userContext.Set<User>().Returns(dbSetMock);
             this.testObject = new Repository<User>(this.userContext);         
          
              //act
@@ -63,6 +61,21 @@ namespace TestUserApi.Repository
                 user
                 };
             return userList.AsQueryable<User>();
+        }
+        //??
+        [Fact]
+        public void GetDbContext_DbContextNotNull_ReturnDbContext()
+        {
+            //Arrange
+            this.testObject = new Repository<User>(this.userContext);
+            //acto
+
+
+            DbContext actual =  this.testObject.GetDbContext();
+
+            //Assert
+            Assert.Equal(this.userContext, actual);
+
         }
 
     }

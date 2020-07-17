@@ -12,11 +12,11 @@ namespace Service
             _unitOfWork = iUnitOfWork;            
         }   
         
-        public bool UserRegistration(User user)
+        public void UserRegistration(User user)
         {
             _unitOfWork.GetRepository().Add(user);
             _unitOfWork.Commit();
-            return true;
+            
         }
     }
 }

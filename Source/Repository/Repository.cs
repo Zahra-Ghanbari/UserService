@@ -29,13 +29,10 @@ namespace Repository
         {
             this.dbSet.Add(entity);
         }
-
-        
         public void Dispose()
         {
             Context.Dispose();
         }
-
         public DbContext GetDbContext()
         {
             return this.Context;

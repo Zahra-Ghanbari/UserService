@@ -7,6 +7,6 @@ namespace Interfaces
 {
     public interface IUserService
     {
-        bool UserRegistration(User user);
+        void UserRegistration(User user);
     }
 }
