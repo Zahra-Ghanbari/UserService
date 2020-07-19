@@ -17,11 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Source\Reposi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Source\Service\Service.csproj", "{F45030F6-10CB-4C68-8065-06E7E4EA4779}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Source\Model\Model.csproj", "{DA3FA4D3-ACFF-4B6E-8242-4EA110A8FE0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entity", "Source\Entity\Entity.csproj", "{DA3FA4D3-ACFF-4B6E-8242-4EA110A8FE0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitOfWork", "Source\UnitOfWork\UnitOfWork.csproj", "{1AA3448B-CEC8-4C59-A810-8AAE844C95EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitOfWork", "Source\UnitOfWork\UnitOfWork.csproj", "{1AA3448B-CEC8-4C59-A810-8AAE844C95EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUserApi", "Test\TestUserApi\TestUserApi.csproj", "{67DA99B7-7DA7-48E2-BA41-C8AA2C627000}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestUserApi", "Test\TestUserApi\TestUserApi.csproj", "{67DA99B7-7DA7-48E2-BA41-C8AA2C627000}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

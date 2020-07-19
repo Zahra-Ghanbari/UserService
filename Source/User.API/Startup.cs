@@ -1,21 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
-using AutoMapper.Configuration;
 using DataContext;
 using Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 using UnitOfWork;
 
-namespace User.API
+namespace UserAPI
 {
     public class Startup
     {
@@ -28,17 +23,20 @@ namespace User.API
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().AddMvcOptions(o=>o.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter())
-                );
+            services.AddMvc().AddMvcOptions(o =>
+            {
+                o.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter());
+                o.EnableEndpointRouting = false;
+            });
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            var connectionString =_configuration["connectionStrings:UserDBConnectionString"];           
-            services.AddDbContext<UserContext>(o=>o.UseSqlServer(connectionString));
+            var connectionString = _configuration["connectionStrings:UserDBConnectionString"];
+            services.AddDbContext<UserContext>(o => o.UseSqlServer(connectionString));
 
             services.AddScoped<IUserService, Service.UserService>();
-            services.AddScoped<IUnitOfWork<Model.User>, UnitOfWork<Model.User>>();
-            services.AddScoped<IRepository<Model.User>,Repository.Repository<Model.User>>();
-            
+            services.AddScoped<IUnitOfWork<Entity.User>, UnitOfWork<Entity.User>>();
+            services.AddScoped<IRepository<Entity.User>, Repository.Repository<Entity.User>>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,7 +54,7 @@ namespace User.API
             app.UseStatusCodePages();
             app.UseMvc();
 
-            
+
         }
     }
 }

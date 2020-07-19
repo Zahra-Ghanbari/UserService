@@ -4,7 +4,7 @@ using Repository;
 using System;
 using System.Collections.Generic;
 using Xunit;
-using Model;
+using Entity;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
@@ -13,7 +13,7 @@ namespace TestUserApi.Repository
     public class RepositoryTest
     {
         private UserContext userContext;
-        private Repository<Model.User> testObject;
+        private Repository<User> testObject;
         public RepositoryTest()
         {
             this.userContext = Substitute.For<UserContext>(new DbContextOptions<UserContext>());       
@@ -45,7 +45,7 @@ namespace TestUserApi.Repository
             ((IQueryable<User>)dbSetMock).ElementType.Returns(expectedUser.ElementType);
             ((IQueryable<User>)dbSetMock).GetEnumerator().Returns(expectedUser.GetEnumerator());
                     
-             this.userContext.Set<User>().Returns(dbSetMock);
+            this.userContext.Set<User>().Returns(dbSetMock);
             this.testObject = new Repository<User>(this.userContext);         
          
              //act

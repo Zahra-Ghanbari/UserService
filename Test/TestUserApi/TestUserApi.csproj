@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="UserAPI\**" />
+    <EmbeddedResource Remove="UserAPI\**" />
+    <None Remove="UserAPI\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="NSubstitute" Version="4.2.2" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
     <PackageReference Include="xunit.abstractions" Version="2.0.3" />
@@ -25,12 +31,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DataContext\" />
-    <Folder Include="UserAPI\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Source\DataContext\DataContext.csproj" />
+    <ProjectReference Include="..\..\Source\Entity\Entity.csproj" />
+    <ProjectReference Include="..\..\Source\Interfaces\Interfaces.csproj" />
     <ProjectReference Include="..\..\Source\Repository\Repository.csproj" />
     <ProjectReference Include="..\..\Source\Service\Service.csproj" />
     <ProjectReference Include="..\..\Source\UnitOfWork\UnitOfWork.csproj" />

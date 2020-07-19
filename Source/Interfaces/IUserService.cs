@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Model;
+using Entity;
 
 namespace Interfaces
 {
     public interface IUserService
     {
-        void UserRegistration(User user);
+        bool UserRegistration(User user);
     }
 }

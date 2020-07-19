@@ -1,16 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.ComponentModel.DataAnnotations;
 
 
-namespace Model
+namespace Entity
 {
-    public class User 
+    public class User
     {
+        public User()
+        {
+            Id = new Guid();
+        }
 
         [Key]
         [Required]
+        [System.ComponentModel.DataAnnotations.Schema.DatabaseGenerated
+            (System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.None)]
         public Guid Id { get; set; }
 
         [Required]

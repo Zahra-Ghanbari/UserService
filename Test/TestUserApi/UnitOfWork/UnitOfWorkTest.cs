@@ -1,7 +1,7 @@
 ﻿using DataContext;
 using Interfaces;
 using Microsoft.EntityFrameworkCore;
-using Model;
+using Entity;
 using NSubstitute;
 using System;
 using System.Collections.Generic;
@@ -17,7 +17,11 @@ namespace TestUserApi.UnitOfWork
         public UnitOfWorkTest()
         {
             this.repository=Substitute.For<IRepository<User>>();
-
+        }
+        [Fact]
+        public void Constructor_NullArgument_ThrowException()
+        {
+            Assert.Throws<ArgumentNullException>(() => new UnitOfWork<User>(null));
         }
         //??
         [Fact]
@@ -28,13 +32,13 @@ namespace TestUserApi.UnitOfWork
             this.repository.GetDbContext().Returns(userContextMock);
 
             //act
-            int intActual = new UnitOfWork<User>(repository).Commit();
+            bool actual = new UnitOfWork<User>(repository).Commit();
 
             //Assert 
             userContextMock.Received(1).SaveChanges();
 
             //??
-            Assert.Equal(userContextMock.SaveChanges(),intActual);
+            Assert.True(actual);
         }
         //??
         [Fact]

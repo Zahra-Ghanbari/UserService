@@ -20,8 +20,8 @@ namespace Interfaces
         /// <summary>
         /// Applys the changes on the database.
         /// </summary>
-        /// <returns>Returns the number of effected rows, or returns 0. Otherwise, returns -1 if an error occurs.</returns>
-        int Commit();
+        /// <returns>Returns <c>true</c> if the changes applied successfully, otherwise returns <c>false</c>.</returns>
+        bool Commit();
 
     }
 

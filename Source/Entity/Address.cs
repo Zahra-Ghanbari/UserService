@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Model
+namespace Entity
 {
     [System.ComponentModel.DataAnnotations.Schema.ComplexType]
     public class Address
