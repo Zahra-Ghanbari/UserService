@@ -11,7 +11,7 @@ namespace UserAPI.Controllers
     [Route("api/User")]
     [ApiController]
     public class UserController : ControllerBase
-    {        
+    {
         private readonly ILogger<UserController> _logger;
         private readonly IUserService _userService;
         private readonly IMapper _mapper;
@@ -25,25 +25,35 @@ namespace UserAPI.Controllers
         [HttpPost]
         public IActionResult CreateUser([FromBody]UserForCreationDto user)
         {
+            bool result = false;
             try
             {
                 if (!ModelState.IsValid)
-                {                   
+                {
                     _logger.LogInformation
                         ("server is unable to process the request sent by the client due to invalid request");
-                    BadRequest(ModelState);
+                    return BadRequest(ModelState);
                 }
 
                 var finalUser = _mapper.Map<User>(user);
-                _userService.UserRegistration(finalUser);
+                result = _userService.UserRegistration(finalUser);
+                if (result)
+                {
+                    return Ok();
+                }
+                else
+                {
+                    _logger.LogError("It cannot add user.");
+                    return StatusCode(500, "Internal error happens.");                    
+                }
             }
             catch (Exception ex)
             {
-                _logger.LogError("Exception happens when add a user",ex);
-                return StatusCode(500,"A problem happend while received your request.");
+                _logger.LogError("Exception happens when add a user", ex);
+                return StatusCode(500, "A problem happend while received your request.");
 
             }
-            return Ok();
+           
         }
     }
 }
