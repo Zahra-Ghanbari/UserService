@@ -1,0 +1,610 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Test\\TestUserApi\\TestUserApi.csproj": {}
+  },
+  "projects": {
+    "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\DataContext\\DataContext.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\DataContext\\DataContext.csproj",
+        "projectName": "DataContext",
+        "projectPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\DataContext\\DataContext.csproj",
+        "packagesPath": "C:\\Users\\Zahra\\.nuget\\packages\\",
+        "outputPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\DataContext\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Zahra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Entity\\Entity.csproj": {
+                "projectPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Entity\\Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Entity\\Entity.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Entity\\Entity.csproj",
+        "projectName": "Entity",
+        "projectPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Entity\\Entity.csproj",
+        "packagesPath": "C:\\Users\\Zahra\\.nuget\\packages\\",
+        "outputPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Entity\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Zahra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Interfaces\\Interfaces.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Interfaces\\Interfaces.csproj",
+        "projectName": "Interfaces",
+        "projectPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Interfaces\\Interfaces.csproj",
+        "packagesPath": "C:\\Users\\Zahra\\.nuget\\packages\\",
+        "outputPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Interfaces\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Zahra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Entity\\Entity.csproj": {
+                "projectPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Entity\\Entity.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Repository\\Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Repository\\Repository.csproj",
+        "projectName": "Repository",
+        "projectPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Repository\\Repository.csproj",
+        "packagesPath": "C:\\Users\\Zahra\\.nuget\\packages\\",
+        "outputPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Zahra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Interfaces\\Interfaces.csproj": {
+                "projectPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Interfaces\\Interfaces.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Service\\Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Service\\Service.csproj",
+        "projectName": "Service",
+        "projectPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Service\\Service.csproj",
+        "packagesPath": "C:\\Users\\Zahra\\.nuget\\packages\\",
+        "outputPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Zahra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Entity\\Entity.csproj": {
+                "projectPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Entity\\Entity.csproj"
+              },
+              "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Interfaces\\Interfaces.csproj": {
+                "projectPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Interfaces\\Interfaces.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\UnitOfWork\\UnitOfWork.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\UnitOfWork\\UnitOfWork.csproj",
+        "projectName": "UnitOfWork",
+        "projectPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\UnitOfWork\\UnitOfWork.csproj",
+        "packagesPath": "C:\\Users\\Zahra\\.nuget\\packages\\",
+        "outputPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\UnitOfWork\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Zahra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Interfaces\\Interfaces.csproj": {
+                "projectPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Interfaces\\Interfaces.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\User.API\\User.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\User.API\\User.API.csproj",
+        "projectName": "User.API",
+        "projectPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\User.API\\User.API.csproj",
+        "packagesPath": "C:\\Users\\Zahra\\.nuget\\packages\\",
+        "outputPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\User.API\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Zahra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\DataContext\\DataContext.csproj": {
+                "projectPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\DataContext\\DataContext.csproj"
+              },
+              "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Entity\\Entity.csproj": {
+                "projectPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Entity\\Entity.csproj"
+              },
+              "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Interfaces\\Interfaces.csproj": {
+                "projectPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Interfaces\\Interfaces.csproj"
+              },
+              "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Repository\\Repository.csproj": {
+                "projectPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Repository\\Repository.csproj"
+              },
+              "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Service\\Service.csproj": {
+                "projectPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Service\\Service.csproj"
+              },
+              "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\UnitOfWork\\UnitOfWork.csproj": {
+                "projectPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\UnitOfWork\\UnitOfWork.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.5, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
+            "NLog.Web.AspNetCore": {
+              "target": "Package",
+              "version": "[4.9.2, )"
+            },
+            "Okta.AspNetCore": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Test\\TestUserApi\\TestUserApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Test\\TestUserApi\\TestUserApi.csproj",
+        "projectName": "TestUserApi",
+        "projectPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Test\\TestUserApi\\TestUserApi.csproj",
+        "packagesPath": "C:\\Users\\Zahra\\.nuget\\packages\\",
+        "outputPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Test\\TestUserApi\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Zahra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\DataContext\\DataContext.csproj": {
+                "projectPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\DataContext\\DataContext.csproj"
+              },
+              "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Entity\\Entity.csproj": {
+                "projectPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Entity\\Entity.csproj"
+              },
+              "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Interfaces\\Interfaces.csproj": {
+                "projectPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Interfaces\\Interfaces.csproj"
+              },
+              "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Repository\\Repository.csproj": {
+                "projectPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Repository\\Repository.csproj"
+              },
+              "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Service\\Service.csproj": {
+                "projectPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\Service\\Service.csproj"
+              },
+              "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\UnitOfWork\\UnitOfWork.csproj": {
+                "projectPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\UnitOfWork\\UnitOfWork.csproj"
+              },
+              "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\User.API\\User.API.csproj": {
+                "projectPath": "E:\\DevelopingMaterials\\review.Net2020_projects\\Github\\UserService\\Source\\User.API\\User.API.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.4.0, )"
+            },
+            "NSubstitute": {
+              "target": "Package",
+              "version": "[4.2.2, )"
+            },
+            "xunit.abstractions": {
+              "target": "Package",
+              "version": "[2.0.3, )"
+            },
+            "xunit.assert": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.core": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.extensibility.core": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.console": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.utility": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
