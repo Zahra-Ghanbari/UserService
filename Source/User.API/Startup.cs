@@ -1,12 +1,17 @@
 using AutoMapper;
 using DataContext;
 using Interfaces;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Okta.AspNetCore;
+using Repository;
 using System;
 using UnitOfWork;
 
@@ -27,7 +32,13 @@ namespace UserAPI
             {
                 o.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter());
                 o.EnableEndpointRouting = false;
+
+                var policy = new AuthorizationPolicyBuilder()
+                .RequireAuthenticatedUser()
+                .Build();
+                o.Filters.Add(new AuthorizeFilter(policy));
             });
+
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             var connectionString = _configuration["connectionStrings:UserDBConnectionString"];
@@ -35,7 +46,20 @@ namespace UserAPI
 
             services.AddScoped<IUserService, Service.UserService>();
             services.AddScoped<IUnitOfWork<Entity.User>, UnitOfWork<Entity.User>>();
-            services.AddScoped<IRepository<Entity.User>, Repository.Repository<Entity.User>>();
+            services.AddScoped<IRepository<Entity.User>, Repository<Entity.User>>();
+            services.AddScoped<DbContext, UserContext>();
+
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = OktaDefaults.ApiAuthenticationScheme;
+                options.DefaultChallengeScheme = OktaDefaults.ApiAuthenticationScheme;
+                options.DefaultSignInScheme = OktaDefaults.ApiAuthenticationScheme;
+            })
+   .AddOktaWebApi(new OktaWebApiOptions()
+   {
+       OktaDomain = _configuration["Okta:OktaDomain"],
+       //AuthorizationServerId = Configuration["Okta:AuthorizationServerId"]
+   });
 
         }
 
@@ -52,6 +76,7 @@ namespace UserAPI
             }
             //app.UseRouting();
             app.UseStatusCodePages();
+            app.UseAuthentication();
             app.UseMvc();
 
 

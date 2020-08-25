@@ -16,8 +16,9 @@ namespace UserAPI
             var logger = NLogBuilder
                    .ConfigureNLog("nlog.config")
                    .GetCurrentClassLogger();
-
-            var host = CreateWebHostBuilder(args).Build();
+            try
+            {
+     var host = CreateWebHostBuilder(args).Build();
 
             using (var scope = host.Services.CreateScope())
             {
@@ -35,6 +36,17 @@ namespace UserAPI
             }
             // run the web app
             host.Run();
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex, "Application stopped because of exception.");
+                throw;
+
+            }
+            finally
+            {
+                NLog.LogManager.Shutdown();
+            }
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

@@ -38,7 +38,7 @@ namespace TestUserApi.Service
                 FirstName = "Zahra",
                 LastName = "GhanbariNezhad",
                 Email = "Z@gmail.com",
-                Birthdate = "18/08/1984",
+                BirthDate = Convert.ToDateTime("18/08/1984"),
                 Address = new Address() { Country = "Iran", State = "Tehran", City = "Tehran" },
             };
             IRepository<User> repository = Substitute.For<IRepository<User>>();
@@ -62,7 +62,7 @@ namespace TestUserApi.Service
                 FirstName = "Zahra",
                 LastName = "GhanbariNezhad",
                 Email = "Z@gmail.com",
-                Birthdate = "18/08/1984",
+                BirthDate = Convert.ToDateTime("18/08/1984"),
                 Address = new Address() { Country = "Iran", State = "Tehran", City = "Tehran" },
             };
             IRepository<User> repository = Substitute.For<IRepository<User>>();

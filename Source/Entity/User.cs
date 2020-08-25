@@ -8,7 +8,7 @@ namespace Entity
     {
         public User()
         {
-            Id = new Guid();
+            Id = System.Guid.NewGuid();
         }
 
         [Key]
@@ -27,15 +27,14 @@ namespace Entity
 
         [Required]
         [MaxLength(150)]
-        [RegularExpression(@"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z")]
+        [EmailAddress(ErrorMessage = "The Email field is not a valid e-mail address.")]
         public string Email { get; set; }
 
-        [Required]
-        [RegularExpression(@"/^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/")]
-        public string Birthdate { get; set; }
+        [Required(ErrorMessage = "You should provide a Birthdate value.")]
+        [DataType(DataType.Date, ErrorMessage = "The BirthDate field is not a valid")]
+        public DateTime BirthDate { get; set; }
 
-        [Required]
-        [MaxLength(100)]
+        [Required]  
         public Address Address { get; set; }
 
         [MaxLength(200)]

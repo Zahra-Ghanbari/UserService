@@ -43,7 +43,7 @@ namespace TestUserApi.UserAPI
             {                
                 LastName = "GhanbariNezhad",
                 Email = "Z@gmail.com",
-                Birthdate = "18/08/1984",
+                BirthDate = Convert.ToDateTime("18/08/1984"),
                 Address = new AddressForCreationDto() { Country = "Iran", State = "Tehran", City = "Tehran" },
             };
             //Act
@@ -62,7 +62,7 @@ namespace TestUserApi.UserAPI
                 FirstName = "Zahra",
                 LastName = "GhanbariNezhad",
                 Email = "Z@gmail.com",
-                Birthdate = "18/08/1984",
+                BirthDate = Convert.ToDateTime("18/08/1984"),
                 Address = new AddressForCreationDto() { Country = "Iran", State = "Tehran", City = "Tehran" },
             };
             var user = new User()
@@ -71,7 +71,7 @@ namespace TestUserApi.UserAPI
                 FirstName = "Zahra",
                 LastName = "GhanbariNezhad",
                 Email = "Z@gmail.com",
-                Birthdate = "18/08/1984",
+                BirthDate = Convert.ToDateTime("18/08/1984"),
                 Address = new Address() { Country = "Iran", State = "Tehran", City = "Tehran" },
             };
             mapperMock.Map<User>(userForCreationDto).Returns(user);
@@ -92,7 +92,7 @@ namespace TestUserApi.UserAPI
                 FirstName = "Zahra",
                 LastName = "GhanbariNezhad",
                 Email = "Z@gmail.com",
-                Birthdate = "18/08/1984",
+                BirthDate = Convert.ToDateTime("18/08/1984"),
                 Address = new AddressForCreationDto() { Country = "Iran", State = "Tehran", City = "Tehran" },
             };
             var user = new User()
@@ -101,7 +101,7 @@ namespace TestUserApi.UserAPI
                 FirstName = "Zahra",
                 LastName = "GhanbariNezhad",
                 Email = "Z@gmail.com",
-                Birthdate = "18/08/1984",
+                BirthDate = Convert.ToDateTime("18/08/1984"),
                 Address = new Address() { Country = "Iran", State = "Tehran", City = "Tehran" },
             };
             mapperMock.Map<User>(userForCreationDto).Returns(user);

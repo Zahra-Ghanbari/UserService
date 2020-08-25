@@ -5,11 +5,13 @@ using AutoMapper;
 using UserAPI.Models;
 using Microsoft.Extensions.Logging;
 using Entity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace UserAPI.Controllers
 {
-    [Route("api/User")]
+   
     [ApiController]
+    [Route("api/User")]
     public class UserController : ControllerBase
     {
         private readonly ILogger<UserController> _logger;
@@ -21,8 +23,14 @@ namespace UserAPI.Controllers
             _userService = iUserService ?? throw new ArgumentNullException(nameof(iUserService));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
+        [HttpGet]
+        public IActionResult Get()        
+        {
+            return Ok();
+        }
 
         [HttpPost]
+        //[Authorize]
         public IActionResult CreateUser([FromBody]UserForCreationDto user)
         {
             bool result = false;
@@ -52,8 +60,7 @@ namespace UserAPI.Controllers
                 _logger.LogError("Exception happens when add a user", ex);
                 return StatusCode(500, "A problem happend while received your request.");
 
-            }
-           
+            }          
         }
     }
 }

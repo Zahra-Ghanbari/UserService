@@ -34,7 +34,7 @@ namespace TestUserApi.Repository
                 FirstName = "Zahra",
                 LastName = "GhanbariNezhad",
                 Email = "Z@gmail.com",
-                Birthdate = "18/08/1984",
+                BirthDate =Convert.ToDateTime("18/08/1984"),
                 Address = new Address() { Country = "Iran", State = "Tehran", City = "Tehran" },
             };
             var expectedUser = this.Seed(user);

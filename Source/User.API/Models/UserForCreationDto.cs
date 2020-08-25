@@ -16,18 +16,18 @@ namespace UserAPI.Models
         [MaxLength(70)]
         public string LastName { get; set; }
 
-        [Required(ErrorMessage = "You should provide a Email value.")]
-        [RegularExpression(@"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z")]
+        [Required(ErrorMessage = "You should provide an Email value.")]
+        [EmailAddress(ErrorMessage = "The Email field is not a valid e-mail address.")]
         [MaxLength(150)]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "You should provide a Birthdate value.")]
-        [RegularExpression(@"/^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/")]
-        public string Birthdate { get; set; }
+        [DataType(DataType.Date,ErrorMessage = "The BirthDate field is not a valid")]
+        public DateTime BirthDate { get; set; }
 
-        [Required(ErrorMessage = "You should provide a Address value.")]
-        [MaxLength(100)]
+        [Required(ErrorMessage = "You should provide a Address value.")]        
         public AddressForCreationDto Address { get; set; }
+
         [MaxLength(200)]
         public string Description { get; set; }
     }
