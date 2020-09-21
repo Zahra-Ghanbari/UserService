@@ -30,7 +30,7 @@ namespace UserAPI.Controllers
         }
 
         [HttpPost]
-        //[Authorize]
+        [Authorize]
         public IActionResult CreateUser([FromBody]UserForCreationDto user)
         {
             bool result = false;

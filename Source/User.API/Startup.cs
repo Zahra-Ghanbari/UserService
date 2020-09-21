@@ -33,10 +33,10 @@ namespace UserAPI
                 o.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter());
                 o.EnableEndpointRouting = false;
 
-                var policy = new AuthorizationPolicyBuilder()
-                .RequireAuthenticatedUser()
-                .Build();
-                o.Filters.Add(new AuthorizeFilter(policy));
+                //var policy = new AuthorizationPolicyBuilder()
+                //.RequireAuthenticatedUser()
+                //.Build();
+                //o.Filters.Add(new AuthorizeFilter(policy));
             });
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
